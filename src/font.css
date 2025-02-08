@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Gandom';
+  src: url('/src/assets/fonts/Gandom.ttf') format('truetype');
+
+}
+
+body {
+  font-family: 'Gandom', sans-serif;
+}
