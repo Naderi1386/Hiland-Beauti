@@ -5,8 +5,9 @@ interface SingleProductItemsPropsType{
 }
 
 const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
+  const {title}=product
   return (
-    <div>SingleProductItems</div>
+    <div>{title}</div>
   )
 }
 
