@@ -1,13 +1,16 @@
 import { useNavigate } from "react-router"
 import { ProductType } from "../shop/ProductType"
 import ProductAttributes from "./ProductAttributes"
+import ProductAddToCart from "./ProductAddToCart"
+import ProductAddToFav from "./ProductAddToFav"
+import ProductCaption from "./ProductCaption"
 
 interface SingleProductItemsPropsType{
     product:ProductType
 }
 
 const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
-  const {img,id,discount,category,title,mainPrice,price,attributes}=product
+  const {img,id,discount,category,title,mainPrice,price,attributes,caption}=product
   const navigate=useNavigate()
   return (
     <div className="flex gap-4 items-start">
@@ -22,7 +25,7 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
         </span>
       </div>
       <div className="w-[75%]">
-        <div className="flex items-center gap-2 text-sm mb-6">
+        <div className="flex items-center gap-2 text-sm mb-4">
           <span onClick={() => navigate("/")} role="button">
             خانه{" "}
           </span>
@@ -39,8 +42,8 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
           </span>
         </div>
         <div>
-          <h2 className="font-bold text-lg mb-7">{title}</h2>
-          <div className="flex items-center gap-2 text-lg mb-7">
+          <h2 className="font-bold text-lg mb-4">{title}</h2>
+          <div className="flex items-center gap-2 text-lg mb-5">
             <span className="flex items-center text-gray-500 line-through">
               <span>{mainPrice}</span>
               <span>تومان</span>
@@ -50,7 +53,21 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
               <span>تومان</span>
             </span>
           </div>
-          {attributes && <ProductAttributes attributes={attributes} />}
+          {attributes && !caption && (
+            <ProductAttributes attributes={attributes} />
+          )}
+          { caption && (
+            <ProductCaption caption={caption} />
+          )}
+
+          <div className="mt-4 pb-4 border-b border-solid border-stone-300">
+            <ProductAddToCart product={product} />
+            <ProductAddToFav product={product} />
+            <span className="flex items-center gap-2 mt-1 text-sm">
+              <span className="block font-bold">دسته :</span>
+              <span className="block ">{category}</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
