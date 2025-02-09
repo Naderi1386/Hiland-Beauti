@@ -13,8 +13,8 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
   const {img,id,discount,category,title,mainPrice,price,attributes,caption}=product
   const navigate=useNavigate()
   return (
-    <div className="flex gap-4 items-start">
-      <div className="w-[35%] relative">
+    <div className="flex flex-col md:flex-row gap-4 items-start">
+      <div className="w-full md:w-[50%] lg:w-[35%] relative">
         <img src={img} alt={`img/product/${id}`} className="w-full" />
         <span className="flex justify-center items-center w-[3.5rem] h-[3.5rem] absolute top-4 left-4 bg-customePink-500 text-white rounded-[100%] font-bold ">
           <span>
@@ -24,7 +24,7 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
           </span>
         </span>
       </div>
-      <div className="w-[75%]">
+      <div className="w-full md:w-[50%] lg:w-[75%]">
         <div className="flex items-center gap-2 text-sm mb-4">
           <span onClick={() => navigate("/")} role="button">
             خانه{" "}
@@ -56,9 +56,7 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
           {attributes && !caption && (
             <ProductAttributes attributes={attributes} />
           )}
-          { caption && (
-            <ProductCaption caption={caption} />
-          )}
+          {caption && <ProductCaption caption={caption} />}
 
           <div className="mt-4 pb-4 border-b border-solid border-stone-300">
             <ProductAddToCart product={product} />

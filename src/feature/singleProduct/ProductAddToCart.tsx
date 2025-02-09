@@ -28,7 +28,7 @@ const ProductAddToCart = ({ product }: ProductAddToCartPropsType) => {
           -
         </button>
       </div>
-      <button className="py-3 px-4 rounded-3xl text-sm text-white bg-[#aa3a8e]">
+      <button className=" text-xs py-3 px-4 rounded-3xl sm:text-sm text-white bg-[#aa3a8e]">
         افزودن به سبد خرید
       </button>
     </div>
