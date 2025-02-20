@@ -14,7 +14,7 @@ const FavoriteItems = ({ product }: FavoriteItemsPropsType) => {
   const onClick = () => navigate(`/product/${id}`);
   const dispatch=useDispatch()
   return (
-    <div className="w-full sm:w-[48%] lg:w-[32%] xl:w-[22.5%]">
+    <div className="w-full sm:w-[48%] lg:w-[31%] xl:w-[22.5%]">
       <div className="flex items-center justify-between gap-2">
         <div onClick={()=>dispatch(removeFavorite(id))} className="flex items-center cursor-pointer transition-all duration-150 hover:opacity-70">
           <IoMdClose />
