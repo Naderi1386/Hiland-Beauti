@@ -1,3 +1,4 @@
+import LoadingSpinner from "../../ui/LoadingSpinner";
 import { ProductType } from "../shop/ProductType";
 import ProductCaptionsList from "./ProductCaptionsList";
 import SingleProductItems from "./SingleProductItems";
@@ -7,9 +8,7 @@ const ProductPage = () => {
   const { isLoading, product } = useProduct();
   if (isLoading)
     return (
-      <div className="text-center mt-12 text-2xl font-bold">
-        <p>درحال بارگزاری</p>
-      </div>
+      <LoadingSpinner />
     );
   return (
     <div className="mt-20">
