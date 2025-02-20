@@ -21,7 +21,7 @@ const HeaderMenuFilter = ({setShow}:HeaderMenuFilter) => {
             { text: "فروشگاه", to: "/shop" },
             { text: "بلاگ", to: "/blog" },
             { text: "ارتباط با ما", to: "/contact-us" },
-            { text: "علاقه مندی", to: "/" },
+            { text: "علاقه مندی", to: "/favorites" },
           ]
         : [
             { text: "بهداشتی", to: "/" },

@@ -10,6 +10,7 @@ import BlogSingle from "./pages/BlogSingle";
 import Shop from "./pages/Shop";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SingleProductPage from "./pages/SingleProductPage";
+import FavoritesPage from "./pages/FavoritesPage";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
       { path: "/contact-us", element: <Contact /> },
       { path: "/shop-rules", element: <ShopRules /> },
       { path: "/shop", element: <Shop /> },
-      {path:'/product/:id',element:<SingleProductPage />}
+      { path: "/product/:id", element: <SingleProductPage /> },
+      { path: "/favorites", element: <FavoritesPage /> },
     ],
     errorElement: <Error />,
   },
