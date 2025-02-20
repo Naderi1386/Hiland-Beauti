@@ -8,7 +8,7 @@ export const Main_Products: HomeProductType[] = [
     price: 207000,
     mainPrice: 200000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-6.jpg",
-    id: "pp1",
+    id: "p1",
   },
   {
     name: "ریمیل حجم دهنده",
@@ -16,7 +16,7 @@ export const Main_Products: HomeProductType[] = [
     price: 740000,
     mainPrice: 590000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-2.jpg",
-    id: "pp2",
+    id: "p2",
   },
   {
     name: "عطر کریستال",
@@ -24,7 +24,7 @@ export const Main_Products: HomeProductType[] = [
     price: 150000,
     mainPrice: 120000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-7.jpg",
-    id: "pp3",
+    id: "p3",
   },
   {
     name: "کرم پودر کالیستا",
@@ -32,7 +32,7 @@ export const Main_Products: HomeProductType[] = [
     price: 440000,
     mainPrice: 400000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-3.jpg",
-    id: "pp4",
+    id: "p4",
   },
   {
     name: "کرم ضد چروک",
@@ -40,7 +40,7 @@ export const Main_Products: HomeProductType[] = [
     price: 350000,
     mainPrice: 250000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-8.jpg",
-    id: "pp5",
+    id: "p5",
   },
   {
     name: "کرم موس میبلین",
@@ -48,7 +48,7 @@ export const Main_Products: HomeProductType[] = [
     price: 450000,
     mainPrice: 435000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-5.jpg",
-    id: "pp6",
+    id: "p6",
   },
   {
     name: "کرم وازلین کامان",
@@ -56,20 +56,20 @@ export const Main_Products: HomeProductType[] = [
     price: 360000,
     mainPrice: 350000,
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/image-4.jpg",
-    id: "pp7",
+    id: "p7",
   },
 ];
-const Size=4
-interface HomeAmazingProductListPropsType{
-  width:string
+const Size = 4;
+interface HomeAmazingProductListPropsType {
+  width: string;
 }
-const HomeAmazingProductList = ({width}:HomeAmazingProductListPropsType) => {
+const HomeAmazingProductList = ({ width }: HomeAmazingProductListPropsType) => {
   const [page, setPage] = useState(1);
   const [opacity, setOpacity] = useState(true);
   const products =
     page === 1
       ? Main_Products.filter((p, i) => i < Size)
-      : Main_Products.filter((p, i) => i >= Size-1);
+      : Main_Products.filter((p, i) => i >= Size - 1);
   return (
     <div className={`w-full ${width === "75" && "custome_md:w-[75%]"} $`}>
       <ul

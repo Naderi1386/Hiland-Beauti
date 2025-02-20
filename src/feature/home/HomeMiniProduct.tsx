@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 export interface HomeProductType {
   discount: number;
   name: string;
@@ -13,8 +15,9 @@ interface HomeMiniProductPropsType {
 
 const HomeMiniProduct = ({ product }: HomeMiniProductPropsType) => {
   const { name, img, id, discount, price, mainPrice } = product;
+  const navigate=useNavigate()
   return (
-    <li className="w-[45.5%] custome_md:w-auto shadow-custome5 cursor-pointer rounded-lg ">
+    <li className="w-[45.5%] custome_md:w-auto shadow-custome5 cursor-pointer rounded-lg " onClick={()=>navigate(`product/${id}`)}>
       <div className="relative bg-[#D4D4D4]  rounded-t-lg overflow-hidden">
         <img src={img} className="w-full" alt={`product/${id}`} />
         <span className="absolute top-2 right-2 font-bold text-sm flex justify-center items-center rounded-[100%] w-[47px] h-[47px] bg-customePink-500 text-white">
