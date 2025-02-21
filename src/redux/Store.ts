@@ -1,20 +1,26 @@
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import favoritesReducer, { FavoritesStateType } from "./Favorite";
+import cartReducer from "./Cart";
 import { configureStore } from "@reduxjs/toolkit";
 const persistConfigFavorites = {
   key: "favoritesProducts",
   storage,
 };
-
+const persistConfigCart = {
+  key: "cart",
+  storage,
+};
 const persistedFavoitesReducer = persistReducer(
   persistConfigFavorites,
   favoritesReducer
 );
+const persistedCartReducer = persistReducer(persistConfigCart, cartReducer);
 
 export const store = configureStore({
   reducer: {
     favorites: persistedFavoitesReducer,
+    cart: persistedCartReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

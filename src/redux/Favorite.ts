@@ -36,9 +36,9 @@ const favoriteSlice = createSlice({
         );
       }
     },
-    removeAll(state){
-      state.favorites=[]
-    }
+    removeAll(state) {
+      state.favorites = [];
+    },
   },
 });
 
