@@ -10,6 +10,7 @@ const initialState: FavoritesStateType = {
 };
 type ActionAddType = { payload: ProductType };
 type ActionRemoveType = { payload: string };
+type ActionRemoveSome = { payload: string[] };
 
 const favoriteSlice = createSlice({
   name: "favorite",
@@ -23,10 +24,22 @@ const favoriteSlice = createSlice({
         (favorite) => favorite.id !== action.payload
       );
     },
+    removeSomeFavorites(state, action: ActionRemoveSome) {
+      const isOne = action.payload.length === 1;
+      if (isOne) {
+        state.favorites = state.favorites.filter(
+          (fav) => fav.id !== action.payload.at(0)
+        );
+      } else {
+        state.favorites = state.favorites.filter(
+          (fav) => !action.payload.includes(fav.id)
+        );
+      }
+    },
   },
 });
 
+export const { addFavorite, removeFavorite, removeSomeFavorites } =
+  favoriteSlice.actions;
 
-export const {addFavorite,removeFavorite}=favoriteSlice.actions
-
-export default favoriteSlice.reducer
+export default favoriteSlice.reducer;

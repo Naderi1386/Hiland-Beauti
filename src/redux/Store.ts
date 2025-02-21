@@ -16,6 +16,13 @@ export const store = configureStore({
   reducer: {
     favorites: persistedFavoitesReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST"], // نادیده گرفتن این اکشن
+        ignoredPaths: ["register"], // یا نادیده گرفتن مسیر مشخص
+      },
+    }),
 });
 export const persistor = persistStore(store);
 
