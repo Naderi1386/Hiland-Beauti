@@ -19,8 +19,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ["persist/PERSIST"], // نادیده گرفتن این اکشن
-        ignoredPaths: ["register"], // یا نادیده گرفتن مسیر مشخص
+        ignoredActions: ["persist/PERSIST"],
+        ignoredPaths: ["register"],
       },
     }),
 });
@@ -37,3 +37,5 @@ export const getFavorites = (store: SelectorType) => store.favorites.favorites;
 
 export const getFavorite = (id: string) => (store: StoreType) =>
   store.favorites.favorites.find((fav) => fav.id === id);
+export const getFavoritesCount = (store: SelectorType) =>
+  store.favorites.favorites.length;

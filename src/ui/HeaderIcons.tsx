@@ -1,14 +1,17 @@
 import { BsBasket3 } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { getFavoritesCount, StoreType } from "../redux/Store";
 
 export const HeaderIcons = () => {
   const navigate=useNavigate()
+  const favoritesLength=useSelector<StoreType>(getFavoritesCount) as number
   return (
     <div className="flex items-start gap-6">
       <div className="relative" onClick={()=>navigate("/favorites")}>
         <span className="absolute z-[10000]  font-bold w-[15px] text-[.6rem] left-[-0.5rem] top-[-0.1rem] h-[15px] bg-customePink-500 text-white rounded-[100%] flex justify-center items-center">
-          0
+          {favoritesLength}
         </span>
 
         <IoIosHeartEmpty

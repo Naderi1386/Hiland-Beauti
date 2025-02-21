@@ -30,14 +30,12 @@ const FavoriteItems = ({
     setChecked((prevChecked) => !prevChecked);
   };
 
-  // مقدار اولیه checked را تنظیم می‌کند
   useEffect(() => {
     if (checked !== isChecked) {
       setChecked(isChecked);
     }
   }, [isChecked]);
 
-  // بررسی می‌کند که آیا آیتم باید اضافه یا حذف شود
   useEffect(() => {
     if (checked && !isChecked) {
       onSelect(id);
