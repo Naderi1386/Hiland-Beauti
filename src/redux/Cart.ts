@@ -8,13 +8,16 @@ export interface CartItemsType {
 
 export interface CartStateType {
   cart: CartItemsType[];
+  isShowCart: boolean;
 }
 
 const initialState: CartStateType = {
   cart: [],
+  isShowCart: false,
 };
 type ActionAddCart = { payload: CartItemsType };
 type ActionRemoveCart = { payload: number };
+type ActionSetIsShowCart = { payload: boolean };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -25,8 +28,11 @@ const cartSlice = createSlice({
     removeCart(state, action: ActionRemoveCart) {
       state.cart = state.cart.filter((cart, index) => index !== action.payload);
     },
+    setIsShow(state, action: ActionSetIsShowCart) {
+      state.isShowCart = action.payload;
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeCart, setIsShow } = cartSlice.actions;
