@@ -1,7 +1,7 @@
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import favoritesReducer, { FavoritesStateType } from "./Favorite";
-import cartReducer, { CartStateType } from "./Cart";
+import cartReducer, { CartItemsType, CartStateType } from "./Cart";
 import { configureStore } from "@reduxjs/toolkit";
 const persistConfigFavorites = {
   key: "favoritesProducts",
@@ -48,3 +48,22 @@ export const getFavoritesCount = (store: SelectorType) =>
   store.favorites.favorites.length;
 
 export const getCartItems = (store: SelectorType) => store.cart.cart;
+
+export const getIsShowCart = (store: SelectorType) => store.cart.isShowCart;
+
+export const getCart = (id: string) => (store: SelectorType) =>
+  store.cart.cart.find((cart) => cart.product.id === id);
+
+export const getLengthOfCartItems = (store: SelectorType) =>
+  store.cart.cart.reduce(getSumOfLength, 0);
+
+const getSumOfLength = (total: number, item: CartItemsType) => {
+  return total + item.count;
+};
+
+export const getTotalPricesOfCart = (store: SelectorType) =>
+  store.cart.cart.reduce(getTotalPrice, 0);
+
+const getTotalPrice = (total: number, item: CartItemsType) => {
+  return total + item.count * item.product.mainPrice;
+};

@@ -15,9 +15,14 @@ const initialState: CartStateType = {
   cart: [],
   isShowCart: false,
 };
+interface EditCartType {
+  id: string;
+  count: number;
+}
 type ActionAddCart = { payload: CartItemsType };
 type ActionRemoveCart = { payload: number };
 type ActionSetIsShowCart = { payload: boolean };
+type ActionEditCart = { payload: EditCartType };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -31,8 +36,15 @@ const cartSlice = createSlice({
     setIsShow(state, action: ActionSetIsShowCart) {
       state.isShowCart = action.payload;
     },
+    editCart(state, action: ActionEditCart) {
+      state.cart = state.cart.map((cart) =>
+        cart.product.id === action.payload.id
+          ? { ...cart, count: cart.count + action.payload.count }
+          : cart
+      );
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart, removeCart, setIsShow } = cartSlice.actions;
+export const { addToCart, removeCart, setIsShow, editCart } = cartSlice.actions;
