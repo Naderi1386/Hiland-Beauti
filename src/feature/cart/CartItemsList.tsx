@@ -4,11 +4,14 @@ import { CartItemsType, removeCart } from "../../redux/Cart";
 import { IoMdClose } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import EmptyCart from "./EmptyCart";
 
 const CartItemsList = () => {
   const cartItems = useSelector<StoreType>(getCartItems) as CartItemsType[];
   const dispatch = useDispatch<DispatchType>();
   const navigate = useNavigate();
+
+  if(cartItems.length===0) return <EmptyCart />
 
   return (
     <ul className="divide-y divide-stone-300 grow">
