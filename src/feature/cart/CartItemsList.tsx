@@ -11,7 +11,7 @@ const CartItemsList = () => {
   const navigate = useNavigate();
 
   return (
-    <ul className="divide-y divide-stone-300">
+    <ul className="divide-y divide-stone-300 grow">
       {cartItems.map((cart, index) => (
         <li className="px-4 py-3 flex items-start gap-4 transition-all duration-150 hover:bg-stone-100 cursor-pointer">
           <div>
