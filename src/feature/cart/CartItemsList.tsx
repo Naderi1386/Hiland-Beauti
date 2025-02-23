@@ -17,7 +17,7 @@ const CartItemsList = () => {
           <div>
             <img
               onClick={() => navigate(`product/${cart.product.id}`)}
-              className="w-[4.5rem] h-[4.5rem]"
+              className="w-[4rem] h-[4rem] sm:w-[4.5rem] sm:h-[4.5rem]"
               src={cart.product.img}
               alt={`cart/img/${cart.product.id}`}
             />
@@ -26,7 +26,7 @@ const CartItemsList = () => {
             <div className="flex items-center gap-2 justify-between mb-2">
               <h4
                 onClick={() => navigate(`product/${cart.product.id}`)}
-                className="text-sm font-bold transition-all duration-150 hover:opacity-60 "
+                className="text-xs sm:text-sm font-bold transition-all duration-150 hover:opacity-60 "
               >
                 {cart.product.title}
               </h4>
@@ -37,9 +37,9 @@ const CartItemsList = () => {
                 <IoMdClose size={15} />
               </div>
             </div>
-            <div className="flex items-center gap-1 text-[.83rem] font-bold">
-              <span className="text-stone-400">{cart.count}</span>
-              <span className="text-stone-400">×</span>
+            <div className="flex items-center gap-1 text-[.75rem] sm:text-[.83rem] font-bold">
+              <span className="text-stone-300">{cart.count}</span>
+              <span className="text-stone-300">×</span>
               <span className="text-customePink-500">
                 {cart.product.mainPrice} تومان{" "}
               </span>
