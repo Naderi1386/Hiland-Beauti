@@ -9,7 +9,7 @@ const CartHeader = () => {
     dispatch(setIsShow(false));
   };
   return (
-    <div className="py-5 px-6 flex items-center gap-2 justify-between border-b border-solid border-stone-300">
+    <div className="py-5 px-4 flex items-center gap-2 justify-between border-b border-solid border-stone-300">
       <h3 className="font-bold text-lg"> ُسبد خرید</h3>
       <div
         onClick={onClick}

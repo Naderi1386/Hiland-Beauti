@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { getIsShowCart, StoreType } from "../../redux/Store";
 import { AnimatePresence, motion } from "framer-motion";
 import CartHeader from "./CartHeader";
+import CartItemsList from "./CartItemsList";
 
 const CartBox = () => {
   const isShowCart = useSelector<StoreType>(getIsShowCart) as boolean;
@@ -14,6 +15,7 @@ const CartBox = () => {
       <AnimatePresence>
         <motion.div className="bg-white w-[22rem] fixed top-0 left-0 bottom-0 z-[10000000]">
           <CartHeader />
+          <CartItemsList />
         </motion.div>
       </AnimatePresence>
     </div>
