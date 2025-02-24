@@ -1,17 +1,27 @@
-import { useNavigate } from "react-router"
-import { ProductType } from "../shop/ProductType"
-import ProductAttributes from "./ProductAttributes"
-import ProductAddToCart from "./ProductAddToCart"
-import ProductAddToFav from "./ProductAddToFav"
-import ProductCaption from "./ProductCaption"
+import { useNavigate } from "react-router";
+import { ProductType } from "../shop/ProductType";
+import ProductAttributes from "./ProductAttributes";
+import ProductAddToCart from "./ProductAddToCart";
+import ProductAddToFav from "./ProductAddToFav";
+import ProductCaption from "./ProductCaption";
 
-interface SingleProductItemsPropsType{
-    product:ProductType
+interface SingleProductItemsPropsType {
+  product: ProductType;
 }
 
-const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
-  const {img,id,discount,category,title,mainPrice,price,attributes,caption}=product
-  const navigate=useNavigate()
+const SingleProductItems = ({ product }: SingleProductItemsPropsType) => {
+  const {
+    img,
+    id,
+    discount,
+    category,
+    title,
+    mainPrice,
+    price,
+    attributes,
+    caption,
+  } = product;
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col md:flex-row gap-4 items-start">
       <div className="w-full md:w-[50%] lg:w-[35%] relative">
@@ -45,11 +55,11 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
           <h2 className="font-bold text-lg mb-4">{title}</h2>
           <div className="flex items-center gap-2 text-lg mb-5">
             <span className="flex items-center text-gray-500 line-through">
-              <span>{mainPrice}</span>
+              <span>{price}</span>
               <span>تومان</span>
             </span>
             <span className="flex items-center text-customePink-500 font-bold">
-              <span>{price}</span>
+              <span>{mainPrice}</span>
               <span>تومان</span>
             </span>
           </div>
@@ -70,6 +80,6 @@ const SingleProductItems = ({product}:SingleProductItemsPropsType) => {
       </div>
     </div>
   );
-}
+};
 
-export default SingleProductItems
+export default SingleProductItems;
