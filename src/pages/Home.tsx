@@ -24,7 +24,7 @@ const Home = () => {
           <HomeLinkBox
             title="هایلند بیوتی"
             caption="فروش انواع لوازم ارایشی بهداشتی"
-            to="/"
+            to="/shop"
           />
         </div>
         <div className=" w-full custome_md:w-[38%] space-y-3">
@@ -32,13 +32,13 @@ const Home = () => {
             img={Img2}
             title="محصولات صورت"
             caption="راز داشتن پوست لطیف"
-            to="/"
+            to="/shop"
           />
           <HomeLinkMiniBox
             img={Img3}
             title="محصولات مو"
             caption="موهایی نرم و خوش حالت"
-            to="/"
+            to="/shop"
           />
         </div>
       </div>

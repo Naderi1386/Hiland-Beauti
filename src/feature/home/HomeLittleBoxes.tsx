@@ -10,19 +10,19 @@ export interface BoxType {
 const data: BoxType[] = [
   {
     name: "محصولات بهداشتی",
-    to: "/",
+    to: "/shop?category=بهداشتی",
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/img-6.png",
-    color: 'pink',
+    color: "pink",
   },
   {
     name: "محصولات ارایشی",
-    to: "/",
+    to: "/shop?category=آرایشی",
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/img-4.png",
     color: "pink-x2",
   },
   {
     name: "محصولات مو",
-    to: "/",
+    to: "/shop?category=مو",
     img: "https://de7541655.t.ux5.ir/themes-files/bz_sh_template05/img-5.png",
     color: "blue",
   },

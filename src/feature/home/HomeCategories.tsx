@@ -13,37 +13,37 @@ export interface CategoryType {
  const categories: CategoryType[] = [
   {
     name: "آرایش ابرو",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "آرایش لب",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "آرایش ناخن",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "لوازم جانبی",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "ست آرایشی",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "آرایش صورت",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
   {
     name: "آرایش چشم",
-    to: "/",
+    to: "/shop",
     img: "https://rokhbanoo.com/wp-content/uploads/2023/07/%D8%B1%DA%98-%D9%84%D8%A8-%D9%85%D8%A7%DB%8C%D8%B9-%DA%A9%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%DB%8C-satin-matt.png",
   },
 ];
