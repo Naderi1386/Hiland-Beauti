@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router";
+import { useProducts } from "../feature/shop/useProducts";
 
 const categories = ["مو", "آرایشی", "بهداشتی", "ارایشی"];
 
 const SearchInput = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+  const { products, isLoading } = useProducts();
   const onSubmit = () => {
     const category = categories.find(
       (category) => category === input || category.startsWith(input)
@@ -14,7 +16,13 @@ const SearchInput = () => {
     if (category === "آرایشی" || category === "ارایشی")
       navigate(`/shop?category=آرایشی`);
     else if (category) navigate(`/shop?category=${category}`);
-    setInput("")
+    else if (!category && !isLoading) {
+      const searchedProduct = products?.find(
+        (product) => product.title === input || product.title.startsWith(input)
+      )?.id;
+      if (searchedProduct) navigate(`/product/${searchedProduct}`);
+    }
+    setInput("");
   };
   return (
     <form
